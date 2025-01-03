@@ -1,0 +1,17 @@
+CXX = g++
+CXXFLAGS = -std=c++11 -Wall -O2 
+# Target and dependencies 
+TARGET =assignment 4
+OBJS = main.o foo.o bar.o 
+# Build and run 
+all: $(TARGET)
+    ./$(TARGET)
+
+$(TARGET): $(OBJS)
+    $(CXX) $(CXXFLAGS) -o $@ $^
+
+%.o: %.cpp
+    $(CXX) $(CXXFLAGS) -c -o $@ lt; 
+# Cleanup 
+clean:
+    rm -f $(TARGET) $(OBJS)
